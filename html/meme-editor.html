@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
+    <link rel="stylesheet" href="../css/canvas.css">
 </head>
-<body>
+<body onload="initEditor()">
     <header>
         <div class="logo">
             <h1>Logo</h1>
@@ -18,6 +19,12 @@
     </header>
     <h1>Meme editor</h1>
     <section class="tool-section"></section>
-    <section class="edit-section"></section>
+    <section class="edit-section">
+            <canvas width="500" height="500"></canvas>
+    </section>
+    <script src="../js/data.js"></script>
+    <script src="../js/util.js"></script>
+    <script src="../js/controllers/editorController.js"></script>
+    <script src="../js/services/editorService.js"></script>
 </body>
 </html>

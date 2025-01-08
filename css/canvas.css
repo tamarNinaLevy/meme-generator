@@ -1,0 +1,8 @@
+.edit-section {
+    width: 70vw;
+    height: 70vh;
+}
+
+canvas {
+    border: thin solid black;
+}

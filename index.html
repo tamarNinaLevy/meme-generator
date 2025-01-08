@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
+    <link rel="stylesheet" href="css/gallery.css">
 </head>
 
-<body>
+<body onload="initiateGallery()" oncontextmenu=false>
     <header>
         <div class="logo">
             <h1>Logo</h1>
@@ -30,6 +31,10 @@
         </div>
     </div>
     <div class="images-container"></div>
+    <script src="../js/util.js"></script>
+    <script src="js/controllers/galleryController.js"></script>
+    <script src="js/services/galleryService.js"></script>
+    <script src="js/data.js"></script>
 </body>
 
 </html>
