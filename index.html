@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
-    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/home-page/gallery.css">
+    <link rel="stylesheet" href="css/home-page/header.css">
+    <link rel="stylesheet" href="css/home-page/search.css">
+    <link rel="stylesheet" href="css/general/scroll-bar.css">
 </head>
 
 <body onload="initiateGallery()" oncontextmenu=false>
     <header>
         <div class="logo">
-            <h1>Logo</h1>
+            <img src="images/UX/logo/LOGO.png" />
         </div>
         <nav>
             <a href="#">Gallery</a>
@@ -19,15 +22,14 @@
             <a href="html/about.html">About</a>
         </nav>
     </header>
-    <h1>Gallery</h1>
     <div class="search-tools">
-        <input type="text" class="search" />
+        <input type="text" class="search" placeholder="search" />
         <div class="key-words">
-            <input type="button" class="key-word" value="click me">
-            <input type="button" class="key-word" value="click me">
-            <input type="button" class="key-word" value="click me">
-            <input type="button" class="key-word" value="click me">
-            <input type="button" class="key-word" value="click me">
+            <input type="button" class="key-word" value="animated">
+            <input type="button" class="key-word" value="animal">
+            <input type="button" class="key-word" value="baby">
+            <input type="button" class="key-word" value="politics">
+            <input type="button" class="key-word" value="movies">
         </div>
     </div>
     <div class="images-container"></div>
