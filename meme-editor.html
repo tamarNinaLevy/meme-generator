@@ -5,13 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
-    <link rel="stylesheet" href="css/canvas.css">
+
+    <!-- general stylesheets links -->
+    <link rel="stylesheet" href="css/home-page/header.css">
+    <link rel="stylesheet" href="css/general/scroll-bar.css">
+
+    <!-- meme-editor stylesheets links -->
+    <link rel="stylesheet" href="css/meme-editor/page-layout.css">
+    <link rel="stylesheet" href="css/meme-editor/main.css">
+    <link rel="stylesheet" href="css/meme-editor/canvas.css">
+    <link rel="stylesheet" href="css/meme-editor/tools.css">
 </head>
 
-<body onload="initEditor()">
+<body onload="initEditor()" onresize="onResize()">
     <header>
         <div class="logo">
-            <h1>Logo</h1>
+            <img src="images/UX/logo/LOGO.png" />
         </div>
         <nav>
             <a href="index.html">Gallery</a>
@@ -19,19 +28,28 @@
             <a href="about.html">About</a>
         </nav>
     </header>
-    <h1>Meme editor</h1>
-    <section class="tool-section">
-        <input type="button" value="switch" onclick="onClickSwitchLine()"/>
-        <input type="button" value="+" onclick="onAddLine()" />
-        <input type="text" oninput="onChangeText(event)" class="content"/>
-        <input type="color" onchange="onChangeColor(event)" />
-        <input type="button" value="A -" onclick="onClickFontSize(-5)" />
-        <input type="button" value="A +" onclick="onClickFontSize(5)" />
-        <a href="#" onclick="onDownloadMeme(this)" download="file-name">Download</a>
-    </section>
-    <section class="edit-section">
-        <canvas width="500" height="500" onclick="onClickText(event)"></canvas>
-    </section>
+    <main>
+        <section class="tool-section">
+            <input type="text" oninput="onChangeText(event)" class="content" />
+
+            <div class="group">
+                <img src="images/UX/icons/up-and-down-opposite-double-arrows-side-by-side.png"
+                    onclick="onClickSwitchLine()" />
+                <img src="images/UX/icons/add.png" onclick="onAddLine()" />
+            </div>
+
+            <div class="group">
+                <img src="images/UX/icons/increase font - icon.png" onclick="onClickFontSize(5)" />
+                <img src="images/UX/icons/decrease font - icon.png" onclick="onClickFontSize(-5)" />
+                <input class="button" type="color" onchange="onChangeColor(event)" />
+            </div>
+            <a href="#" onclick="onDownloadMeme(this)" download="file-name">Download</a>
+        </section>
+
+        <section class="edit-section">
+            <canvas width="500" height="500" onclick="onClickText(event)"></canvas>
+        </section>
+    </main>
     <script src="js/util.js"></script>
     <script src="js/data.js"></script>
     <script src="js/controllers/editorController.js"></script>

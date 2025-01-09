@@ -7,10 +7,11 @@ function initEditor() {
     renderMeme()
 }
 
-// function onResize() {
-//     const editSection = document.querySelector('.edit-section')
-//     gElCanvas.width = editSection.clientWidth * 0.9
-// }
+function onResize() {
+    const editSection = document.querySelector('.edit-section')
+    gElCanvas.width = editSection.clientWidth * 0.9
+    renderMeme()
+}
 
 function renderMeme() {
     const imageData = loadFromStorage('image')
