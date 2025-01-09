@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
     <link rel="stylesheet" href="../css/canvas.css">
 </head>
+
 <body onload="initEditor()">
     <header>
         <div class="logo">
@@ -18,13 +20,22 @@
         </nav>
     </header>
     <h1>Meme editor</h1>
-    <section class="tool-section"></section>
+    <section class="tool-section">
+        <input type="button" value="switch" onclick="onClickSwitchLine()"/>
+        <input type="button" value="+" onclick="onAddLine()" />
+        <input type="text" oninput="onChangeText(event)" class="content"/>
+        <input type="color" onchange="onChangeColor(event)" />
+        <input type="button" value="A -" onclick="onClickFontSize(-5)" />
+        <input type="button" value="A +" onclick="onClickFontSize(5)" />
+        <a href="#" onclick="onDownloadMeme(this)" download="file-name">Download</a>
+    </section>
     <section class="edit-section">
-            <canvas width="500" height="500"></canvas>
+        <canvas width="500" height="500" onclick="onClickText(event)"></canvas>
     </section>
     <script src="../js/data.js"></script>
     <script src="../js/util.js"></script>
     <script src="../js/controllers/editorController.js"></script>
     <script src="../js/services/editorService.js"></script>
 </body>
+
 </html>
