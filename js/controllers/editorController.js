@@ -83,3 +83,20 @@ function setInputText() {
     const input = document.getElementsByClassName('content')[0]
     input.value = gMeme.lines[gMeme.selectedLineIdx].txt
 }
+
+function onClickTextAlign(alignment) {
+    setLineAlignment(alignment)
+    renderMeme()
+}
+
+function onChangeFont(event) {
+    const font = event.target.value
+    setLineFont(font)
+    renderMeme()
+}
+
+function onChangeFontSize(event) {
+    const size = event.target.value
+    setLineSelectedSize(parseInt(size))
+    renderMeme()
+}

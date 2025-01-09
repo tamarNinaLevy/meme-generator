@@ -7,7 +7,11 @@ var gMeme = {
             size: 20,
             color: 'black',
             x: 5,
-            y: 0,
+            y: 5,
+            width: 0,
+            height: 0,
+            alignment: 'right',
+            font: 'Arial'
         },
     ]
 }
@@ -22,15 +26,15 @@ function getImage(id) {
 
 function drawText(line) {
     const textHeight = line.size
-    gCtx.font = line.size + 'px Arial'
+    gCtx.font = line.size + 'px ' + line.font
     const textMetrics = gCtx.measureText(line.txt)
     const textWidth = textMetrics.width
     gCtx.fillStyle = line.color
-    gCtx.textAlign = 'center'
-    gCtx.textBaseline = 'middle'
+    gCtx.textAlign = line.alignment
+    gCtx.textBaseline = 'center'
     gCtx.shadowColor = 'white'
     gCtx.shadowBlur = 5
-    gCtx.fillText(line.txt, line.x + textWidth / 2, line.y + textHeight)
+    gCtx.fillText(line.txt, line.x + textWidth, line.y + textHeight)
     line.width = textWidth;
     line.height = textHeight;
 }
@@ -53,16 +57,23 @@ function setLineSize(val) {
     gMeme.lines[gMeme.selectedLineIdx].size += val
 }
 
+function setLineSelectedSize(val) {
+    gMeme.lines[gMeme.selectedLineIdx].size = val
+}
+
 function createNewLine() {
-    const prevY = gMeme.lines[gMeme.lines.length - 1].y + 35
+    const prevY = gMeme.lines[gMeme.lines.length - 1].y + gMeme.lines[gMeme.lines.length - 1].size + 10
     const prevX = gMeme.lines[gMeme.lines.length - 1].x
-    console.log("prevX: ", prevX);
     gMeme.lines.push({
         txt: 'Text Line 1',
         size: 20,
         color: 'black',
         x: prevX,
         y: prevY,
+        width: 0,
+        height: 0,
+        alignment: 'right',
+        font: 'Arial'
     })
 }
 
@@ -73,7 +84,7 @@ function setLineBorder() {
     const textHeight = line.size
     gCtx.strokeStyle = "black"
     gCtx.lineWidth = 2
-    gCtx.strokeRect(line.x, line.y, textWidth, textHeight * 1.5)
+    gCtx.strokeRect(line.x, line.y, textWidth * 2, textHeight * 1.5)
 }
 
 function isTextClicked(clickedPos) {
@@ -91,4 +102,12 @@ function isTextClicked(clickedPos) {
         }
     }
     return false
+}
+
+function setLineAlignment(alignment) {
+    gMeme.lines[gMeme.selectedLineIdx].alignment = alignment
+}
+
+function setLineFont(font) {
+    gMeme.lines[gMeme.selectedLineIdx].font = font
 }
