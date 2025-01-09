@@ -24,6 +24,11 @@ function getImage(id) {
     return gImages.find((image) => image.id === id)
 }
 
+function getCorrectedPath(imgSrc) {
+    const basePath = location.hostname.includes('github.io') ? 'https://yourusername.github.io/meme-generator/' : '../../';
+    return basePath + imgSrc;
+}
+
 function drawText(line) {
     const textHeight = line.size
     gCtx.font = line.size + 'px ' + line.font
