@@ -16,7 +16,7 @@ function renderMeme() {
     const imageData = loadFromStorage('image')
     setMemeProperty('selectedImgId', imageData.id)
     const imageElement = new Image()
-    imageElement.src = '../../' + imageData.src
+    imageElement.src = imageData.src
     imageElement.onload = () => {
         coverCanvasWithImg(imageElement)
         gMeme.lines.map((line, index) => {

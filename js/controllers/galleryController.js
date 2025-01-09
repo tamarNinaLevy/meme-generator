@@ -16,13 +16,13 @@ function renderImagesIntoGallery() {
 
 function onClickImage(img) {
     saveToStorage('image', img)
-    window.location.href = `meme-editor.html`;
+    window.location.href = `meme-editor.html`
 }
 
 function onClickKeyWords(event) {
     const val = event.target.value
     const button = document.getElementById(val)
     gKeywordSearchCountMap[val]++
-    const size = 15 + gKeywordSearchCountMap[val];
+    const size = 15 + gKeywordSearchCountMap[val]
     button.style.fontSize =  size + 'px'
 }
