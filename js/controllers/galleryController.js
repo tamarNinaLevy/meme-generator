@@ -16,7 +16,7 @@ function renderImagesIntoGallery() {
 
 function onClickImage(img) {
     saveToStorage('image', img)
-    window.location.href = `html/meme-editor.html`;
+    window.location.href = `meme-editor.html`;
 }
 
 function onClickKeyWords(event) {
