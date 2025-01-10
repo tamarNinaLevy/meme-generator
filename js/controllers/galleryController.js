@@ -24,5 +24,10 @@ function onClickKeyWords(event) {
     const button = document.getElementById(val)
     gKeywordSearchCountMap[val]++
     const size = 15 + gKeywordSearchCountMap[val]
-    button.style.fontSize =  size + 'px'
+    button.style.fontSize = size + 'px'
+}
+
+function onClickFlexible() {
+    const randIdx = getRandomInt(0, gImages.length)
+    onClickImage(gImages[randIdx])
 }

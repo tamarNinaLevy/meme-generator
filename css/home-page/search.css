@@ -7,6 +7,13 @@
     height: 10vh;
 }
 
+.flexible {
+    background-color: orange;
+    border: solid thin black;
+    padding: 10px;
+    border-radius: 15px;
+}
+
 .search {
     width: 20%;
     height: 5vh;
