@@ -25,7 +25,7 @@ function getImage(id) {
 }
 
 function getCorrectedPath(imgSrc) {
-    const basePath = location.hostname.includes('github.io') ? './images/' : '../../';
+    const basePath = location.hostname.includes('github.io') ? './' : '../../';
     return basePath + imgSrc;
 }
 
