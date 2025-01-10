@@ -25,7 +25,7 @@ function getImage(id) {
 }
 
 function getCorrectedPath(imgSrc) {
-    const basePath = location.hostname.includes('github.io') ? 'https://yourusername.github.io/meme-generator/' : '../../';
+    const basePath = location.hostname.includes('github.io') ? './images/' : '../../';
     return basePath + imgSrc;
 }
 
