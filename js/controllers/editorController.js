@@ -17,9 +17,7 @@ function renderMeme() {
     const imageData = loadFromStorage('image')
     setMemeProperty('selectedImgId', imageData.id)
     const imageElement = new Image()
-    console.log("imageData.src: ", imageData.src);
     imageElement.src = getCorrectedPath(imageData.src)
-    console.log("imageElement.src: ", imageElement.src);
     imageElement.onload = () => {
         coverCanvasWithImg(imageElement)
         gMeme.lines.map((line, index) => {
@@ -100,5 +98,15 @@ function onChangeFont(event) {
 function onChangeFontSize(event) {
     const size = event.target.value
     setLineSelectedSize(parseInt(size))
+    renderMeme()
+}
+
+function onPositionText(val) {
+    setPositionText(val)
+    renderMeme()
+}
+
+function onDeleteLine() {
+    deleteLine()
     renderMeme()
 }

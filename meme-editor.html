@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="css/general/scroll-bar.css">
 
     <!-- meme-editor stylesheets links -->
-    <link rel="stylesheet" href="css/meme-editor/page-layout.css">
     <link rel="stylesheet" href="css/meme-editor/main.css">
     <link rel="stylesheet" href="css/meme-editor/canvas.css">
     <link rel="stylesheet" href="css/meme-editor/tools.css">
@@ -30,56 +29,64 @@
     </header>
     <main>
         <section class="tool-section">
-            <input type="text" oninput="onChangeText(event)" class="content" />
+            <div class="tool-board">
 
-            <div class="group">
-                <img src="images/UX/icons/up-and-down-opposite-double-arrows-side-by-side.png"
-                    onclick="onClickSwitchLine()" />
-                <img src="images/UX/icons/add.png" onclick="onAddLine()" />
-                <input class="button" type="color" onchange="onChangeColor(event)" />
+                <input type="text" oninput="onChangeText(event)" class="content" placeholder="Enter Text..." />
+
+                <div class="group">
+                    <img src="images/UX/icons/up-and-down-opposite-double-arrows-side-by-side.png"
+                        onclick="onClickSwitchLine()" />
+                    <img src="images/UX/icons/add.png" onclick="onAddLine()" />
+                    <input class="button" type="color" onchange="onChangeColor(event)" />
+                    <input  type="button" class="button" value="delete" onclick="onDeleteLine()"/>
+                </div>
+
+                <div class="group">
+                    <img src="images/UX/icons/align-to-left.png" onclick="onClickTextAlign('right')" />
+                    <img src="images/UX/icons/center-text-alignment.png" onclick="onClickTextAlign('center')" />
+                    <img src="images/UX/icons/align-to-right.png" onclick="onClickTextAlign('left')" />
+                </div>
+
+                <div class="group">
+                    <img src="images/UX/icons/increase font - icon.png" onclick="onClickFontSize(1)" />
+                    <img src="images/UX/icons/decrease font - icon.png" onclick="onClickFontSize(-1)" />
+                </div>
+
+                <div class="group">
+                    <select onchange="onChangeFont(event)" class="select">
+                        <option value="Arial">Arial</option>
+                        <option value="Impact">Impact</option>
+                        <option value="Arial Black">Arial Black</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Oswald">Oswald</option>
+                        <option value="Open Sans">Open Sans</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Lobster">Lobster</option>
+                        <option value="Permanent Marker">Permanent Marker</option>
+                    </select>
+
+                    <select onchange="onChangeFontSize(event)" class="select">
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                        <option value="35">35</option>
+                        <option value="40">40</option>
+                        <option value="45">45</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+                <div class="group">
+                    <input class="button" type="button" value="down" onclick="onPositionText(1)">
+                    <input class="button" type="button" value="up" onclick="onPositionText(-1)">
+                </div>
+                <a href="#" onclick="onDownloadMeme(this)" download="file-name">Download</a>
             </div>
-
-            <div class="group">
-                <img src="images/UX/icons/align-to-left.png" onclick="onClickTextAlign('right')" />
-                <img src="images/UX/icons/center-text-alignment.png" onclick="onClickTextAlign('center')" />
-                <img src="images/UX/icons/align-to-right.png" onclick="onClickTextAlign('left')" />
-            </div>
-
-            <div class="group">
-                <img src="images/UX/icons/increase font - icon.png" onclick="onClickFontSize(1)" />
-                <img src="images/UX/icons/decrease font - icon.png" onclick="onClickFontSize(-1)" />
-            </div>
-
-            <div class="group">
-                <select onchange="onChangeFont(event)">
-                    <option value="Arial">Arial</option>
-                    <option value="Impact">Impact</option>
-                    <option value="Arial Black">Arial Black</option>
-                    <option value="Comic Sans MS">Comic Sans MS</option>
-                    <option value="Verdana">Verdana</option>
-                    <option value="Oswald">Oswald</option>
-                    <option value="Open Sans">Open Sans</option>
-                    <option value="Helvetica">Helvetica</option>
-                    <option value="Lobster">Lobster</option>
-                    <option value="Permanent Marker">Permanent Marker</option>
-                </select>
-
-                <select onchange="onChangeFontSize(event)">
-                    <option value="15">15</option>
-                    <option value="20">20</option>
-                    <option value="25">25</option>
-                    <option value="30">30</option>
-                    <option value="35">35</option>
-                    <option value="40">40</option>
-                    <option value="45">45</option>
-                    <option value="50">50</option>
-                </select>
-            </div>
-            <a href="#" onclick="onDownloadMeme(this)" download="file-name">Download</a>
         </section>
 
         <section class="edit-section">
-            <canvas width="500" height="500" onclick="onClickText(event)"></canvas>
+                <canvas width="500" height="500" onclick="onClickText(event)"></canvas>
         </section>
     </main>
     <script src="js/util.js"></script>

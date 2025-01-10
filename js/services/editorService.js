@@ -116,3 +116,12 @@ function setLineAlignment(alignment) {
 function setLineFont(font) {
     gMeme.lines[gMeme.selectedLineIdx].font = font
 }
+
+function setPositionText(val) {
+    gMeme.lines[gMeme.selectedLineIdx].y += val
+}
+
+function deleteLine() {
+    const newLines = gMeme.lines.filter((index) => {return index !== gMeme.selectedLineIdx})
+    setMemeProperty('lines', newLines)
+}
