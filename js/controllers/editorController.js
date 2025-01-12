@@ -110,3 +110,14 @@ function onDeleteLine() {
     deleteLine()
     renderMeme()
 }
+
+function onClickSaveMeme() {
+    let memes = loadFromStorage('memes')
+    if (!memes || memes.length === 0) {
+        memes = [gMeme]
+        saveToStorage('memes', memes)
+    } else {
+        memes.push({ ...gMeme })
+        saveToStorage('memes', memes)
+    }
+}
