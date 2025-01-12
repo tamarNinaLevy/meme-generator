@@ -1,6 +1,6 @@
 @media (max-width:600px) {
     main {
-        flex-direction: column;
+        flex-direction: column-reverse;
         justify-content: flex-start;
         width: 100%;
         height: 100%;
