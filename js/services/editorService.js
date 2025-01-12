@@ -122,6 +122,10 @@ function setPositionText(val) {
 }
 
 function deleteLine() {
-    const newLines = gMeme.lines.filter((index) => {return index !== gMeme.selectedLineIdx})
+    const newLines = gMeme.lines.filter((line, index) => {
+        if (index !== gMeme.selectedLineIdx)
+            return true
+        return false
+    })
     setMemeProperty('lines', newLines)
 }
