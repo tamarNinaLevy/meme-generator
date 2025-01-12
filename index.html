@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/home-page/header.css">
     <link rel="stylesheet" href="css/home-page/search.css">
     <link rel="stylesheet" href="css/general/scroll-bar.css">
+    <link rel="stylesheet" href="css/home-page/mobile.css">
     <link rel="stylesheet" href="css/general/body.css">
 </head>
 
@@ -24,8 +25,10 @@
         </nav>
     </header>
     <div class="search-tools">
-        <input type="text" class="search" placeholder="search" />
-        <input class="flexible" type="button" value="I'm flexible" onclick="onClickFlexible()" />
+        <div class="inputs">
+            <input type="text" class="search" placeholder="search" />
+            <input class="flexible" type="button" value="I'm flexible" onclick="onClickFlexible()" />
+        </div>
         <div class="key-words">
             <input type="button" class="key-word" onclick="onClickKeyWords(event)" id="funny" value="funny">
             <input type="button" class="key-word" onclick="onClickKeyWords(event)" id="animated" value="animated">

@@ -6,20 +6,23 @@ header {
     height: 15vh;
     width: 100%;
     background-color: rgb(39, 37, 37);
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .logo {
-    background-color: red;
     width:20%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-left: 5rem;
+    overflow-x: hidden;
 }
 
 .logo img {
     width: 100%;
+    overflow-x: hidden;
 }
 
 nav {
@@ -29,6 +32,7 @@ nav {
     justify-content: space-between;
     height: 100%;
     margin-right: 5rem;
+    overflow-x: hidden;
 }
 
 a {
